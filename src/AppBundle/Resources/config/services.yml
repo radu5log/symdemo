@@ -1,0 +1,9 @@
+services:
+    app.advertiser_offer_service:
+        class: AppBundle\Service\AdvertiserOfferService
+    app.advertiser1:
+        class: AppBundle\Service\Advertiser\Advertiser1
+        arguments: [ '@doctrine.orm.entity_manager' ]
+    app.advertiser2:
+        class: AppBundle\Service\Advertiser\Advertiser2
+        arguments: [ '@doctrine.orm.entity_manager' ]

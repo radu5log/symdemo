@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS `temp` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP TABLE IF EXISTS `Offer`;
+CREATE TABLE IF NOT EXISTS `Offer` (
+  `id` int(11) NOT NULL,
+  `application_id` CHAR(32) NOT NULL,
+  `country` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payout` decimal(10,2) NOT NULL,
+  `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `platform` enum('Android','iOS') COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE `Offer` ADD PRIMARY KEY (`id`);
+ALTER TABLE `Offer` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `Offer` ADD UNIQUE(`application_id`);

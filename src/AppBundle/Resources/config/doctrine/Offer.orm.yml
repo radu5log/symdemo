@@ -1,0 +1,46 @@
+AppBundle\Entity\Offer:
+    type: entity
+    table: Offer
+    uniqueConstraints:
+        application_id:
+            columns:
+                - application_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        applicationId:
+            type: string
+            nullable: false
+            length: 32
+            column: application_id
+        country:
+            type: string
+            nullable: false
+            length: 2
+            options:
+                fixed: false
+        payout:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 2
+        name:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        platform:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }
